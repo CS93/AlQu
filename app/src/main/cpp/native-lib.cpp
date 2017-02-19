@@ -3,7 +3,7 @@
 
 extern "C"
 jstring
-Java_de_schlender_carsten_alqu_Init_stringFromJNI(
+Java_de_schlender_carsten_alqu_chooseCategory_Init_stringFromJNI(
         JNIEnv* env,
         jobject /* this */) {
     std::string hello = "Hello from C++";

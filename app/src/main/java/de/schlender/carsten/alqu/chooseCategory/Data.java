@@ -28,4 +28,16 @@ public class Data {
             //restoreDataFromBundle(b);
         }
     }
+
+    /*private void restoreDataFromBundle(Bundle b) {
+        //The Serializable is used to put the User-Object in Bundle
+        mCategories = (ArrayList<String>) b.getStringArrayList(Constants.KEY_KARTEIEN_VALUE);
+        mStatistics = (ArrayList<Statistics>) b.getSerializable(Constants.KEY_STATISTICS_VALUE);
+    }
+
+    public void saveDataInBundle(Bundle b){
+        //The Serializable is used to put the User-Object in Bundle
+        b.putStringArrayList(Constants.KEY_KARTEIEN_VALUE, mCategories);
+        b.putSerializable(Constants.KEY_STATISTICS_VALUE, mStatistics);
+    }*/
 }

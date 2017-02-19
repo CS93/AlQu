@@ -25,7 +25,10 @@ public class Init extends AppCompatActivity {
         initGui();
         initApplicationLogic();
         initEventToListenerMapping();
+
     }
+
+
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
@@ -57,9 +60,33 @@ public class Init extends AppCompatActivity {
 
     private void initEventToListenerMapping() {
         new EventToListenerMapping(mGui, mApplicationLogic);
-
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        return mGui.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        if(mGui.onOptionsItemSelected(item) == true){
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    //Wenn notwendig kann hier C++ eingebunden werden:
+    /*// A native method that is implemented by the 'native-lib' native library,
+    // which is packaged with this application.
+
+    public native String stringFromJNI();
+
+    // Used to load the 'native-lib' library on application startup.
+    static {
+        System.loadLibrary("native-lib");
+    } */
 }
 /*
     setContentView(R.layout.activity_choose);
